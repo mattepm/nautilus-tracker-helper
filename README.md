@@ -7,6 +7,15 @@ To keep in mind:
 - You can see if a folder has indexing by showing hidden files with CTRL-H and verifying if there is a .trackerignore file
 - Turning off indexing may be a bad idea on some folders that need it
 
+# Important notes
+Avoid managing manually the **.trackerignore** files. 
+They don't have a real usage for ignoring the files since the extension uses ignore-directories from gsettings. 
+They actually serve to refreshing Nautilus correctly in a creative way since there is no command to refresh it.
+
+Remember that by tracker-miner design, if you blacklist a parent directory, all configurations in child directories are ignored. For example:
+If you stop indexing /home/your_user/ the configurations set for Desktop, Documents, Downloads will be completely ignored.
+So if you care about indexing Pictures, Downloads, Desktop files, etc. you shouldn't flag your home folder, but rather its subdirectories that you want to exclude.
+
 # Install
 Run the install script, or follow below manual steps:
 
@@ -23,8 +32,3 @@ Install python3-nautilus:
 **nautilus -q**
 
 Then re-open Nautilus via UI.
-
-# Additional notes
-Avoid managing manually the **.trackerignore** files. 
-They don't have a real usage for ignoring the files since the extension uses ignore-directories from gsettings. 
-They actually serve to refreshing Nautilus correctly in a creative way since there is no command to refresh it.
