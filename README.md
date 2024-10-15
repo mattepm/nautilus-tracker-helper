@@ -12,12 +12,17 @@ Run the install script, or follow below manual steps:
 
 ## Pre-reqs:
 Install python3-nautilus:
-'''sudo apt install python3-nautilus'''
+**sudo apt install python3-nautilus**
 
 ## Copy the script to the Python Nautilus extensions folder
-'''mkdir -p ~/.local/share/nautilus-python/extensions/'''
-'''cp nautilus-tracker-extension.py ~/.local/share/nautilus-python/extensions/'''
+**mkdir -p ~/.local/share/nautilus-python/extensions/**
+**cp nautilus-tracker-extension.py ~/.local/share/nautilus-python/extensions/**
 
 ## Kill Nautilus
-'''nautilus -q'''
+**nautilus -q**
 Then re-open Nautilus via UI.
+
+# Additional notes
+Avoid managing manually the **.trackerignore** files. 
+They don't have a real usage for ignoring the files since the extension uses ignore-directories from gsettings. 
+They actually serve to refreshing Nautilus correctly in a creative way since there is no command to refresh it.
