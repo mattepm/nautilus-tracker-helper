@@ -16,10 +16,12 @@ Install python3-nautilus:
 
 ## Copy the script to the Python Nautilus extensions folder
 **mkdir -p ~/.local/share/nautilus-python/extensions/**
+
 **cp nautilus-tracker-extension.py ~/.local/share/nautilus-python/extensions/**
 
 ## Kill Nautilus
 **nautilus -q**
+
 Then re-open Nautilus via UI.
 
 # Additional notes
