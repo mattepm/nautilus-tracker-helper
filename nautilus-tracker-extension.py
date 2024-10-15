@@ -111,7 +111,3 @@ class StopIndexingExtension(GObject.GObject, Nautilus.MenuProvider):
             return [item]  # Return the item to display in the background menu
 
         return []  # No items to display if neither option applies
-
-    def update_menu(self, current_folder: Nautilus.FileInfo) -> None:
-        # This method triggers a refresh of the menu.
-        Nautilus.MenuProvider.get_background_items(self, current_folder)
